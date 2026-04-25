@@ -1,6 +1,6 @@
 # Zaynedrift.com
 
-henlo! ^w^ welcome to my website's repository <3
+henlo! ^w^ welcome to my website's repository
 
 ### Credits
 - [InactiveBen](https://github.com/InactiveBen/) (thx for the perhaps.gay repo <3)

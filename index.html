@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luci's meowSite</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="Luci's meowSite">
+  <meta property="og:description" content="I break stuff on the internet :3">
+  <meta property="og:image" content="https://cdn.discordapp.com/emojis/1026533070955872337.webp">
+  <meta property="og:url" content="https://zaynedrift.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/emojis/1494470585475010570.webp">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -16,10 +21,8 @@
       --surface2: #1c1c2a;
       --border: rgba(255,255,255,0.07);
       --text: #f0eeff;
-      --muted: #8880a8;
+      --muted: #b899da;
       --accent: #b97cff;
-      --accent2: #ff6fd8;
-      --accent3: #6fddff;
       --glow: rgba(185,124,255,0.18);
     }
 
@@ -28,7 +31,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -65,18 +68,6 @@
       top: -200px; left: -200px;
       animation-delay: 0s;
     }
-    .aurora-blob:nth-child(2) {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, #ff6fd8, transparent 70%);
-      bottom: -100px; right: -100px;
-      animation-delay: -7s;
-    }
-    .aurora-blob:nth-child(3) {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, #6fddff, transparent 70%);
-      top: 40%; left: 55%;
-      animation-delay: -12s;
-    }
     @keyframes drift {
       from { transform: translate(0, 0) scale(1); }
       to   { transform: translate(40px, 30px) scale(1.08); }
@@ -106,10 +97,9 @@
       height: 100px;
       border-radius: 50%;
       padding: 2.5px;
-      background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
+      background: conic-gradient(from 0deg, var(--accent));
       animation: spin 6s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
     .avatar-inner {
       width: 100%;
       height: 100%;
@@ -124,12 +114,12 @@
 
     /* ── NAME + HANDLE ── */
     .name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(26px, 6vw, 34px);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: clamp(24px, 6vw, 30px);
       letter-spacing: -0.5px;
       text-align: center;
-      background: linear-gradient(135deg, var(--text) 30%, var(--accent) 80%);
+      background: var(--accent);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -189,9 +179,9 @@
 
     /* ── SECTION LABEL ── */
     .section-label {
-      font-family: 'Syne', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--muted);
@@ -250,8 +240,8 @@
 
     .link-text { flex: 1; }
     .link-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
       font-size: 14px;
       line-height: 1.2;
     }
@@ -277,106 +267,6 @@
     .icon-blue   { background: rgba(111,221,255,0.15); }
     .icon-green  { background: rgba(111,255,180,0.15); }
     .icon-amber  { background: rgba(255,200,80,0.15); }
-
-    /* ── SHOUT CARD ── */
-    .shout-card {
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, var(--surface) 0%, rgba(185,124,255,0.06) 100%);
-      padding: 18px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .shout-card::after {
-      content: '📣';
-      position: absolute;
-      right: 18px;
-      top: 14px;
-      font-size: 22px;
-      opacity: 0.4;
-    }
-    .shout-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .shout-text {
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.6;
-      max-width: 90%;
-    }
-    .shout-date {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    /* ── STATS ── */
-    .stats {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-    }
-    .stat-card {
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      padding: 16px;
-      text-align: center;
-    }
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--text), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .stat-label {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    /* ── FOOTER ── */
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      animation: fadeUp 0.6s 0.7s ease both;
-    }
-    .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .footer-brand:hover {
-      border-color: rgba(185,124,255,0.4);
-      color: var(--accent);
-    }
-    .footer-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: conic-gradient(var(--accent), var(--accent2), var(--accent3));
-      animation: spin 3s linear infinite;
-    }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
@@ -407,118 +297,58 @@
     <!-- Avatar -->
     <div class="avatar-wrap">
       <div class="avatar-ring">
-          <div class="avatar-inner"></div>
+          <div class="avatar-inner"><img src="pfp.png" alt="Lucia" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;" /></div>
       </div>
     </div>
 
     <!-- Name -->
     <div class="name">Lucia</div>
-    <div class="handle">@luci · she/her</div>
+    <div class="handle">@zaynedrift · she/her</div>
 
     <p class="bio">I break stuff on the internet :3</p>
 
     <!-- Badges -->
     <div class="badges">
-      <span class="badge pro">✦ Pro</span>
-      <span class="badge">Next.js</span>
-      <span class="badge">Open Source</span>
-      <span class="badge">Full-Stack</span>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Shout -->
-    <div class="section-label" style="animation: fadeUp 0.6s 0.32s ease both;">Latest Shout</div>
-    <div class="shout-card">
-      <div class="shout-label">Announcement</div>
-      <div class="shout-text">🎉 Vibez is now open source! Clone it, remix it, run your own instance. One link for everything you do — free forever, pay once for Pro.</div>
-      <div class="shout-date">April 2026 · github.com/BensonByte/perhaps.gay</div>
+      <span class="badge pro">Foxie</span>
     </div>
 
     <div class="divider"></div>
 
     <!-- Links -->
-    <div class="section-label" style="animation: fadeUp 0.6s 0.34s ease both;">Links</div>
     <div class="links">
 
-      <a href="https://vibez.lol" target="_blank" class="link-card">
-        <div class="link-icon icon-purple">🔮</div>
+      <a href="https://pronouns.cc/@zayne" target="_blank" class="link-card">
+        <div class="link-icon icon-purple">
+          <img src="https://pronouns.cc/favicon.svg" alt="" width="20" height="20" style="object-fit: contain;" />
+        </div>
         <div class="link-text">
-          <div class="link-title">Vibez — My Bio Page</div>
-          <div class="link-sub">vibez.lol · The live product</div>
+          <div class="link-title">learn more about me</div>
+          <div class="link-sub">pronouns.cc</div>
         </div>
         <div class="link-arrow">↗</div>
       </a>
 
-      <a href="https://github.com/BensonByte/perhaps.gay" target="_blank" class="link-card">
-        <div class="link-icon icon-blue">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:#6fddff">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
+      <a href="https://fox.devicegalaxy.me" target="_blank" class="link-card">
+        <div class="link-icon icon-purple">
+          <img src="https://fox.devicegalaxy.me/favicon.png" alt="" width="20" height="20" style="object-fit: contain;" />
         </div>
         <div class="link-text">
-          <div class="link-title">GitHub — Source Code</div>
-          <div class="link-sub">Open source · MIT License</div>
+          <div class="link-title">take a look at my devices</div>
+          <div class="link-sub">fox.devicegalaxy.me</div>
         </div>
         <div class="link-arrow">↗</div>
       </a>
 
-      <a href="https://vibez.lol/support" target="_blank" class="link-card">
-        <div class="link-icon icon-green">💬</div>
+      <a href="" target="_blank" class="link-card">
+        <div class="link-icon icon-purple">:3</div>
         <div class="link-text">
-          <div class="link-title">Support &amp; Contact</div>
-          <div class="link-sub">Get help or say hi</div>
-        </div>
-        <div class="link-arrow">↗</div>
-      </a>
-
-      <a href="https://vibez.lol/privacy" target="_blank" class="link-card">
-        <div class="link-icon icon-amber">🔐</div>
-        <div class="link-text">
-          <div class="link-title">Privacy Policy</div>
-          <div class="link-sub">Your data stays yours — always</div>
-        </div>
-        <div class="link-arrow">↗</div>
-      </a>
-
-      <a href="https://vibez.lol" target="_blank" class="link-card">
-        <div class="link-icon icon-pink">✨</div>
-        <div class="link-text">
-          <div class="link-title">Get Vibez Pro</div>
-          <div class="link-sub">Unlimited links · $6.99 one-time</div>
+          <div class="link-title">support me</div>
+          <div class="link-sub">work in progress</div>
         </div>
         <div class="link-arrow">↗</div>
       </a>
 
     </div>
-
-    <div class="divider"></div>
-
-    <!-- Stats -->
-    <div class="section-label" style="animation: fadeUp 0.6s 0.43s ease both;">At a Glance</div>
-    <div class="stats">
-      <div class="stat-card">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Free Links</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Pro Links</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">MIT</div>
-        <div class="stat-label">License</div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <a href="https://vibez.lol" target="_blank" class="footer-brand">
-        <div class="footer-dot"></div>
-        Made with Vibez
-      </a>
-    </div>
-
   </div>
 
 </body>

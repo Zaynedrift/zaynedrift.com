@@ -11,3 +11,4 @@ henlo! ^w^ welcome to my website's repository
 if you're a friend of mine and would like your own button on the bottom of my website, feel free to dm me the html snippet for your button on discord or telegram, you name will also show up under here <3
 
 - [Restart](https://restartb.xyz)
+

@@ -13,3 +13,4 @@ if you're a friend of mine and would like your own button on the bottom of my we
 - [Restart](https://restartb.xyz)
 - [Emi](https://ratted.systems/emi/)
 - [Trixie](https://trixiesjustvibin.com)
+- [Uncutified](https://uncutified.moe)
